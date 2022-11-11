@@ -32,10 +32,13 @@ GO
  
 -- import the file
 BULK INSERT cve.cveDetails
-FROM 'known_exploited_vulnerabilities.csv'
+FROM '/etc/mysql/known_exploited_vulnerabilities.csv'
 WITH
 (
         FORMAT='CSV',
         FIRSTROW=2
+        FIELDTERMINATOR = ',',  --CSV field delimiter
+        ROWTERMINATOR = '\n',   --Use to shift the control to next row
+        TABLOCK
 )
 GO
