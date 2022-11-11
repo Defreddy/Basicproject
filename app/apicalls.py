@@ -1,10 +1,10 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-from . import crud, models, schemas
+from . import crud, model, schema
 from .database import SessionLocal, engine
 
-models.Base.metadata.create_all(bind=engine)
+model.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
@@ -24,7 +24,7 @@ async def root():
 async def root():
     return {"message": "This is a cve"}
 
-@app.get("/cve/{cveName}", response_model=schemas.Cve)
+@app.get("/cve/{cveName}", response_model=schema.Cve)
 def read_user(cveName: str, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, cveName=cveName)
     if db_user is None:
