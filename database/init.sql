@@ -13,14 +13,14 @@ USE cve;
   CREATE TABLE cveDetails
    (	
     cveName VARCHAR(50) NOT NULL PRIMARY KEY, 
-	vendorProject VARCHAR(50),
-	product VARCHAR(50), 
-    vulnerabilityName VARCHAR(50), 
+	vendorProject text
+	product text, 
+    vulnerabilityName text, 
     dateAdded date, 
     shortDescription text, 
     requiredAction text, 
     dueDate date,
-    notes VARCHAR(50)
+    notes text
    ) ;
 
 -- truncate the table first
