@@ -13,7 +13,7 @@ USE cve;
   CREATE TABLE cveDetails
    (	
     cveName VARCHAR(50) NOT NULL PRIMARY KEY, 
-	vendorProject text
+	vendorProject text,
 	product text, 
     vulnerabilityName text, 
     dateAdded date, 
