@@ -30,5 +30,7 @@ services:
     container_name: basicproject
     environment:
       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+    links:
+      - db
     ports:
       - "8051:8051"
