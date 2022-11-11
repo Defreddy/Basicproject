@@ -1,16 +1,16 @@
 -- Verwijderen tabellen
 
-DROP TABLE if exists  dbo.cve;
+DROP TABLE if exists  cve.cveDetails;
+DROP SCHEMA if exists cve;
 
---------------------------------------------------------
---  DB INFORMATIEVE BOEKEN - FREDERIK CRAUWELS  
---------------------------------------------------------
+--  DB CVE FREDERIK CRAUWELS  
 
---------------------------------------------------------
---  Table UITGEVER
---------------------------------------------------------
+CREATE SCHEMA cve;
+USE cve;
 
-  CREATE TABLE cve
+-- Table cveDetails
+
+  CREATE TABLE cveDetails
    (	
     cveId int NOT NULL PRIMARY KEY, 
 	cveName VARCHAR(50), 
@@ -27,11 +27,11 @@ DROP TABLE if exists  dbo.cve;
    ) ;
 
 -- truncate the table first
-TRUNCATE TABLE dbo.cve;
+TRUNCATE TABLE cve.cveDetails;
 GO
  
 -- import the file
-BULK INSERT dbo.cve
+BULK INSERT cve.cveDetails
 FROM 'known_exploited_vulnerabilities.csv'
 WITH
 (

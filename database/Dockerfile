@@ -16,7 +16,7 @@ ENV MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 ADD init.sql /etc/mysql/init.sql
 ADD known_exploited_vulnerabilities.csv /etc/mysql/known_exploited_vulnerabilities.csv
 
-RUN sed -i 's/MYSQL_DATABASE/'$MYSQL_DATABASE'/g' /etc/mysql/init.sql
+RUN sed -i 's/MYSQL_DATABASE/'basicproject'/g' /etc/mysql/init.sql
 RUN cp /etc/mysql/init.sql /docker-entrypoint-initdb.d
 
 EXPOSE $MYSQL_PORT:3306
