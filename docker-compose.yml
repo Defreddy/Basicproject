@@ -13,6 +13,9 @@ services:
       - "3306"
         
     restart: always
+    volumes:
+      - db:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -30,3 +33,7 @@ services:
     container_name: basicproject
     ports:
       - "8051:8051"
+
+volumes:
+  db:
+    driver: local
