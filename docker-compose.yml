@@ -28,5 +28,7 @@ services:
       - db
     image: freds00n/basicproject:latest
     container_name: basicproject
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
     ports:
       - "8051:8051"
