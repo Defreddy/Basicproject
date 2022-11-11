@@ -22,23 +22,15 @@ USE cve;
     requiredAction text, 
     dueDate date,
     notes VARCHAR(50)
---	CONSTRAINT pk_uitgever PRIMARY KEY(uitgeverId),
---       UNIQUE(naam)
    ) ;
 
 -- truncate the table first
 TRUNCATE TABLE cve.cveDetails;
-GO
+
  
--- import the file
-BULK INSERT cve.cveDetails
-FROM '/etc/mysql/known_exploited_vulnerabilities.csv'
-WITH
-(
-        FORMAT='CSV',
-        FIRSTROW=2
-        FIELDTERMINATOR = ',',  --CSV field delimiter
-        ROWTERMINATOR = '\n',   --Use to shift the control to next row
-        TABLOCK
-)
-GO
+LOAD DATA INFILE '/etc/mysql/known_exploited_vulnerabilities.csv' 
+INTO TABLE cveDetails 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
