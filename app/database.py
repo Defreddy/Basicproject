@@ -5,7 +5,7 @@ import mysql.connector
 
 db = mysql.connector.connect(user='root', password='abc123', host='localhost', port='3306', database='cve')
 
-DATABASE_URL = "db://root@localhost:3306/cve"
+DATABASE_URL = "db:///./app.db"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
