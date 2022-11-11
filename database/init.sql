@@ -12,8 +12,7 @@ USE cve;
 
   CREATE TABLE cveDetails
    (	
-    cveId int NOT NULL PRIMARY KEY, 
-	cveName VARCHAR(50), 
+    cveName VARCHAR(50) NOT NULL PRIMARY KEY, 
 	vendorProject VARCHAR(50),
 	product VARCHAR(50), 
     vulnerabilityName VARCHAR(50), 
@@ -27,8 +26,7 @@ USE cve;
 -- truncate the table first
 TRUNCATE TABLE cve.cveDetails;
 
- 
-LOAD DATA INFILE '/etc/mysql/known_exploited_vulnerabilities.csv' 
+LOAD DATA INFILE '/var/lib/mysql-files/known_exploited_vulnerabilities.csv' 
 INTO TABLE cveDetails 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
