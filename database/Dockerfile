@@ -1,6 +1,7 @@
 FROM mysql:latest
 
 RUN chown -R mysql:root /var/lib/mysql/
+RUN chown -R mysql:root /etc/mysql
 
 ARG MYSQL_DATABASE
 ARG MYSQL_USER
@@ -13,6 +14,7 @@ ENV MYSQL_USER=$MYSQL_USER
 ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
 ENV MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 
+ADD my.cnf /etc/my.cnf
 ADD init.sql /etc/mysql/init.sql
 ADD known_exploited_vulnerabilities.csv /etc/mysql/known_exploited_vulnerabilities.csv
 
