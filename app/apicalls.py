@@ -1,20 +1,20 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-from . import crud, model, schema
-from .database import SessionLocal, engine
+#from . import crud, model, schema
+#from .database import SessionLocal, engine
 
-model.Base.metadata.create_all(bind=engine)
+#model.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
 # Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+#def get_db():
+#    db = SessionLocal()
+#    try:
+#        yield db
+#    finally:
+#        db.close()
 
 @app.get("/product")
 async def root():
