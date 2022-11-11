@@ -1,0 +1,7 @@
+from sqlalchemy.orm import Session
+
+from . import model, schema
+
+
+def get_user(db: Session, cveName: str):
+    return db.query(models.Cve).filter(models.cveName == cveName).first()
