@@ -3,6 +3,8 @@ from sqlalchemy.orm import Session
 import mysql.connector
 from mysql.connector import Error
 
+connection=None
+
 try:
     connection = mysql.connector.connect(host='localhost',
                                          database='cve',
