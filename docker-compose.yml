@@ -23,15 +23,10 @@ services:
       - "8082:80"
     restart: always
   
-#  book-info-service:
-#    depends_on:
-#      - db
-#    image: freds00n/basicproject:latest
-#    container_name: basicproject
-#    environment:
-#      - MYSQL_DATABASE=${MYSQL_DATABASE}
-#      - MYSQL_USER=${MYSQL_USER}
-#      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-#      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-#    ports:
-#      - "8051:8051"
+  api-service:
+    depends_on:
+      - db
+    image: freds00n/basicproject:latest
+    container_name: basicproject
+    ports:
+      - "8051:8051"
