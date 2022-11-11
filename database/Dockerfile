@@ -1,5 +1,6 @@
 FROM mysql:latest
 
+RUN chown -R mysql:root /etc/mysql/
 RUN chown -R mysql:root /var/lib/mysql/
 RUN chown -R mysql:root /var/lib/mysql-files
 
@@ -20,6 +21,6 @@ ADD init.sql /docker-entrypoint-initdb.d
 
 RUN sed -i 's/MYSQL_DATABASE/'$MYSQL_DATABASE'/g' /var/lib/mysql-files/init.sql
 
-EXPOSE $MYSQL_PORT:3306 3306 33060 33061
+EXPOSE $MYSQL_PORT:3306 33060 33061
 
 CMD ["mysqld"]
