@@ -18,6 +18,6 @@ ADD init.sql /var/lib/mysql-files/init.sql
 ADD known_exploited_vulnerabilities.csv /var/lib/mysql-files/known_exploited_vulnerabilities.csv
 ADD init.sql /docker-entrypoint-initdb.d
 
-RUN sed -i 's/MYSQL_DATABASE/'$MYSQL_DATABASE'/g' /etc/mysql/init.sql
+RUN sed -i 's/MYSQL_DATABASE/'$MYSQL_DATABASE'/g' /var/lib/mysql-files/init.sql
 
 EXPOSE $MYSQL_PORT:3306
