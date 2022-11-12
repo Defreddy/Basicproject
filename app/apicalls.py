@@ -4,19 +4,18 @@ import mysql.connector
 from mysql.connector import Error
 
 #from . import crud, model, schema
-#from .database import SessionLocal, engine
+from .database import SessionLocal, engine
 
-#model.Base.metadata.create_all(bind=engine)
+model.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# Dependency
-#def get_db():
-#    db = SessionLocal()
-#    try:
-#        yield db
-#    finally:
-#        db.close()
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 @app.get("/product")
 async def root():
