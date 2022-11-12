@@ -10,6 +10,7 @@ services:
       - MYSQL_ROOT_PASSWORD=abc123
     ports:
       - "3306:3306"
+    restart: always
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
