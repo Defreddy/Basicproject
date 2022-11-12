@@ -3,25 +3,6 @@ from sqlalchemy.orm import Session
 import mysql.connector
 from mysql.connector import Error
 
-
-
-connection = mysql.connector.connect(host='localhost',
-                                         database='cve',
-                                         user='root',
-                                         password='abc123')                                      
-
-db_Info = connection.get_server_info()
-
-print("Connected to MySQL Server version ", db_Info)
-
-cursor = connection.cursor()
-
-cursor.execute("select database();")
-
-record = cursor.fetchone()
-
-print("You're connected to database: ", record)
-
 #from . import crud, model, schema
 #from .database import SessionLocal, engine
 
