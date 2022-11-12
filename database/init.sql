@@ -12,15 +12,17 @@ USE cve;
 
   CREATE TABLE cveDetails
    (	
-    cveName VARCHAR(50) NOT NULL PRIMARY KEY, 
-	vendorProject text,
-	product text, 
+    cveID int NOT NULL, 
+    cveName VARCHAR(50), 
+	  vendorProject text,
+	  product text, 
     vulnerabilityName text, 
     dateAdded date, 
     shortDescription text, 
     requiredAction text, 
     dueDate date,
     notes text
+    CONSTRAINT pk_cveDetails PRIMARY KEY(cveID)
    ) ;
 
 -- truncate the table first
