@@ -36,6 +36,3 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return users
 
 
-    return users
-
-
