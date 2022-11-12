@@ -24,7 +24,6 @@ def get_connection():
 # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
 print(get_connection())
 engine = get_connection()
-connection = engine.connect()
 
 print(f"Connection to the {host} for user {user} created successfully.")
 
