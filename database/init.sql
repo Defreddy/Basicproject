@@ -12,7 +12,7 @@ USE cve;
 
   CREATE TABLE cveDetails
    (	
-    cveID int NOT NULL PRIMARY KEY, 
+    cveID int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     cveName VARCHAR(50), 
 	  vendorProject text,
 	  product text, 
