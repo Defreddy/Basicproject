@@ -12,7 +12,7 @@ USE cve;
 
   CREATE TABLE cveDetails
    (	
-    cveID int NOT NULL, 
+    cveID int NOT NULL PRIMARY KEY, 
     cveName VARCHAR(50), 
 	  vendorProject text,
 	  product text, 
@@ -22,7 +22,6 @@ USE cve;
     requiredAction text, 
     dueDate date,
     notes text
-    CONSTRAINT pk_cveDetails PRIMARY KEY(cveID)
    ) ;
 
 -- truncate the table first
