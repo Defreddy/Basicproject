@@ -1,9 +1,11 @@
 from sqlalchemy.schema import Column
 from sqlalchemy.types import String, Text, Date
+
 from app.database import Base
 
 class Cve(Base):
     __tablename__ = "cveDetail"
+
     cveName = Column(String(50), primary_key=True, index=True)
     vendorProject = Column(Text)
     product = Column(Text)
