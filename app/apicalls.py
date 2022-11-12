@@ -3,6 +3,8 @@ from sqlalchemy.orm import Session
 import mysql.connector
 from mysql.connector import Error
 from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 # DEFINE THE DATABASE CREDENTIALS
 user = 'root'
@@ -22,10 +24,9 @@ def get_connection():
     )
         
 # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
-print(get_connection())
 engine = get_connection()
-
-print(f"Connection to the {host} for user {user} created successfully.")
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
 
 
 #from . import crud, model, schema
