@@ -23,8 +23,16 @@ def get_connection():
         
 # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
 print(get_connection())
+engine = create_engine(get_connection(), echo=True)
+connection = engine.connect()
 
-  
+cve_table = sqlalchemy.Table('cveDetails', sqlalchemy.MetaData(), autoload=True, autoload_with=engine)
+
+query = sqlalchemy.select(cve)
+
+cursor_result: CursorResult = connection.execute(query)
+
+cve: List[Cve] = legacy_cursor_result.fetchall()
 
 #from . import crud, model, schema
 #from .database import SessionLocal, engine
