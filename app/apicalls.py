@@ -32,7 +32,7 @@ def read_user(cveName: str, db: Session = Depends(get_db)):
 
 @app.get("/users/", response_model=list[schema.Cve])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    users = crud.get_users(db, skip=skip, limit=limit)
+    users = crud.get_user(db, skip=skip, limit=limit)
     return users
 
 @app.get("/users")
