@@ -21,14 +21,11 @@ def get_connection():
     )
   
   
-try:
         
-    # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
-    engine = get_connection()
-    print(
-        f"Connection to the {host} for user {user} created successfully.")
-except Exception as ex:
-    print("Connection could not be made due to the following error: \n", ex)
+# GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
+engine = get_connection()
+print(
+    f"Connection to the {host} for user {user} created successfully.")
   
 
 #from . import crud, model, schema
