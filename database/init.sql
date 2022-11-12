@@ -31,5 +31,4 @@ LOAD DATA INFILE '/var/lib/mysql-files/known_exploited_vulnerabilities.csv'
 INTO TABLE cveDetails 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
-LINES TERMINATED BY '\n'(cveName,vendorProject,product,vulnerabilityName,dateAdded,shortDescription,requiredAction,dueDate,notes)
-IGNORE 1 ROWS;
+LINES TERMINATED BY '\n'(cveName,vendorProject,product,vulnerabilityName,dateAdded,shortDescription,requiredAction,dueDate,notes);
