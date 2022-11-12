@@ -11,6 +11,8 @@ services:
     ports:
       - "3306:3306"
     restart: always
+    expose:
+      - "3306"
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest

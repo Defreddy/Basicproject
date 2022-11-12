@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 # DEFINE THE DATABASE CREDENTIALS
 user = 'root'
 password = 'abc123'
-host = 'localhost'
+host = 'db'
 port = 3306
 database = 'cve'
   
