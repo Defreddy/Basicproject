@@ -26,6 +26,8 @@ services:
   api-service:
     depends_on:
       - db
+    links:
+      - db
     image: freds00n/basicproject:latest
     container_name: basicproject
     ports:
