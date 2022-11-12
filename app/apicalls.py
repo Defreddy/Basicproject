@@ -19,8 +19,6 @@ def get_connection():
             user, password, host, port, database
         )
     )
-  
-  
         
 # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
 engine = get_connection()
