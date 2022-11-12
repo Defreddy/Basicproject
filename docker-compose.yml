@@ -6,12 +6,10 @@ services:
     image: freds00n/basicproject_db:latest
     container_name: mysql-basicproject
     environment:
-      - MYSQL_DATABASE=$MYSQL_DATABASE
-      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE=cve
+      - MYSQL_ROOT_PASSWORD=abc123
     ports:
-      - "${MYSQL_PORT}:3306"
-    expose:
-      - "3306"
+      - "3306:3306"
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -27,10 +25,5 @@ services:
       - db
     image: freds00n/basicproject:latest
     container_name: basicproject
-    environment:
-      - MYSQL_DATABASE=$MYSQL_DATABASE
-      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
-    links:
-      - db
     ports:
       - "8051:8051"
