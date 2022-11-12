@@ -18,10 +18,11 @@ def get_connection():
         url="mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(
             user, password, host, port, database
         )
+
     )
         
 # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
-get_connection()
+print(get_connection())
 
   
 
