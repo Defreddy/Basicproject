@@ -20,10 +20,8 @@ def get_connection():
         )
     )
         
-# GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
-engine = get_connection()
-print(
-    f"Connection to the {host} for user {user} created successfully.")
+get_connection()
+
   
 
 #from . import crud, model, schema
