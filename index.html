@@ -6,9 +6,11 @@
     <div
     x-cloak
     x-data="{cve: [], 'isLoading': true}"
-    x-init="fetch('http://localhost:8051/cve/1')
+    x-init="fetch('http://localhost:8051/cve/1', {
+        method: 'GET',
+        mode: 'no-cors'})
     .then(response => response.json())
-    .then(response => { cve = response.cveName; isLoading = false; console.log(response.cveName); })"
+    .then(response => { cve = response.cveName; isLoading = false; console.log(response.cveName); }),"
 >
 <!-- Table will go here -->
 </div>
