@@ -31,22 +31,34 @@ def get_db():
         db.close()
 
 @app.get("/cve/{cveID}", response_model=schema.Cve)
-def read_user(cveID: int, db: Session = Depends(get_db)):
-    db_user = crud.get_cveid(db, cveID=cveID)
-    if db_user is None:
-        raise HTTPException(status_code=404, detail="User not found")
-    return db_user
+def read_cve(cveID: int, db: Session = Depends(get_db)):
+    db_cve = crud.get_cveid(db, cveID=cveID)
+    if db_cve is None:
+        raise HTTPException(status_code=404, detail="CVE not found")
+    return db_cve
 
 @app.get("/cveName/{cveName}", response_model=schema.Cve)
-def read_user(cveName: str, db: Session = Depends(get_db)):
-    db_user = crud.get_cve(db, cveName=cveName)
-    if db_user is None:
-        raise HTTPException(status_code=404, detail="User not found")
-    return db_user
+def read_cveName(cveName: str, db: Session = Depends(get_db)):
+    db_cve = crud.get_cve(db, cveName=cveName)
+    if db_cve is None:
+        raise HTTPException(status_code=404, detail="CVE not found")
+    return db_cve
+
+@app.get("/product/{product}", response_model=schema.Cve)
+def read_cveName(product: str, db: Session = Depends(get_db)):
+    db_cve = crud.get_cve(db, product=product)
+    if db_cve is None:
+        raise HTTPException(status_code=404, detail="CVE not found")
+    return db_cve
 
 @app.get("/allcve/", response_model=list[schema.Cve])
 def read_users(db: Session = Depends(get_db)):
     users = db.query(model.Cve).all()
     return users
 
-
+@app.post("/createcve/", response_model=schema.Cve)
+def create_cve(createCve: schema.CveCreate, db: Session = Depends(get_db)):
+    db_cve = crud.get_cve(db, cveName=createCve.cveName)
+    if db_cve:
+        raise HTTPException(status_code=400, detail="CVE already registered")
+    return crud.create_cve(db=db, createCve=createCve)
