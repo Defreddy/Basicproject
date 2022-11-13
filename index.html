@@ -1,0 +1,15 @@
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{
+        responsedata: null,
+        async getData() {
+            this.responsedata = await (await fetch('http://localhost:8051/users/')).json();
+        }
+    }">
+        Data returned: <strong x-text="responsedata[1].product">Placeholder</strong>
+    </div>
+</body>
+</html>
