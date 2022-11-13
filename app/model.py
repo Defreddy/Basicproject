@@ -6,7 +6,7 @@ from .database import Base
 class Cve(Base):
     __tablename__ = "cveDetails"
     cveID = Column(Integer, primary_key=True, index=True)
-    cveName = Column(String(50), )
+    cveName = Column(String(50))
     vendorProject = Column(Text)
     product = Column(Text)
     vulnerabilityName = Column(Text)

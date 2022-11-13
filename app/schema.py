@@ -7,7 +7,6 @@ class CveBase(BaseModel):
     cveName: str
     vendorProject: str
     product: str
-    dateAdded: date
 
 class CveCreate(CveBase):
     pass    
@@ -18,6 +17,7 @@ class Cve(CveBase):
     requiredAction: Optional[str]
     dueDate: Optional[date]
     notes: Optional[str]
+    dateAdded: Optional[date]
 
     class Config:
         orm_mode = True

@@ -22,17 +22,18 @@
     <body id="page-top">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">CISA exploited CVEs</a>
+                <a class="navbar-brand" href="#page-top">[GET] CISA exploited CVEs</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#add">[POST] Add CVE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#product">[GET] Product search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#list">[GET] CVE List</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
+        <!-- Top -->
         <header class="masthead">
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
@@ -99,14 +100,140 @@
                 </div>
             </div>
         </header>
-        <!-- Services-->
-        <section class="page-section bg-dark text-white" id="services">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+<!-- Add me -->
+        <section class="page-section" id="add">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Keep the world safe - add a new CVE today!</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Cybersecurity means working together. Add a new CVE today to keep others notified about new vulnerabilitie and exploits.</p>
+                    </div>
+                </div>
+                <div x-data="{
+                    responsedata: null,
+                    postcve: null,
+                    postvendor: null,
+                    postproduct:null,
+                    async callmethod1() {
+                        this.responsedata = await (await fetch('http://localhost:8051/createcve/', 
+                        {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                cveID: 1,
+                                cveName: this.postcve,
+                                vendorProject: this.postvendor,
+                                product: this.postproduct,
+                            }),
+                            headers: {
+                                'Content-type': 'application/json; charset=UTF-8',
+                            },
+                        })).json();
+            
+                        console.log(this.responsedata);
+                    },
+                }">  
+                    <p>The following CVE has been added <strong x-text="responsedata.cveName"></strong></p>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        <form id="contactForm" class="was-validated">
+                            <!-- CVE input-->
+                            <div class="form-floating">
+                                <input class="form-control form-check-label" id="cve" x-model="postcve" type="text" placeholder="CVE" required />
+                                <label for="cve">CVE</label>
+                                <div class="invalid-feedback">
+                                    A valid CVE contains the following elements: CVE-YEAR-ID
+                                  </div>
+                            </div>
+                            <!-- Vendor input -->
+                            <div class="form-floating">
+                                <label for="vendor">Vendor name</label>
+                                  <input class="form-control form-check-label" id="vendor" x-model="postvendor" type="vendor" placeholder="Vendor Name" aria-describedby="inputGroupPrepend2" required />
+                                <div class="invalid-feedback">
+                                    Please enter a valid vendor name
+                                  </div>
+                            </div>
+                            <!-- Product input-->
+                            <div class="form-floating">
+                                <input class="form-control form-check-label" id="product" x-model="postproduct" type="product" placeholder="Product Name"  required />
+                                <label for="product">Product name</label>
+                                <div class="invalid-feedback">
+                                    Please enter a valid product name
+                                  </div>
+                            </div>
+                            <!-- error message-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary btn-xl" x-on:click="callmethod1" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- About-->
+
+        <!-- Product search-->        
+        <section class="page-section bg-dark text-white" id="product">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Find specific exploits for all your products</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Enter a product name and find out more details. Below is a complete list of the CVEs and products.</p>
+                    <div x-ref="demo" class="flex w-full md:w-1/2 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
+                        <div x-data="productSearch()" x-init="fetchProduct()" class="mx-auto flex flex-col p-10">
+                          <div class="flex flex-row">
+                            <input type="text" name="product" x-model="product" class="flex w-2/3 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 appearance-none leading-normal">
+                            <a >
+                                <button type="submit" @click="fetchProduct()" class="btn btn-primary btn-xl" :class="[ isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700' ]" :disabled="isLoading">
+                                    Search
+                                </button>
+                                </a>
+                          </div>
+                          <template x-if="value">
+                            <div class="flex flex-row pt-10">
+                              <div class="text-sm justify-center flex flex-col">
+                                <h3 class="text-white-75 text-sm font-bold uppercase leading-none mb-2" x-text="value.cveName"></h3>
+                                <table class="text-white-75 mb-4 table"> 
+                                <tr>
+                                    <th class="h4 mb-2" scope="col">Vendor</th>
+                                    <th class="h4 mb-2" scope="col">Date added</th>
+                                    <th class="h4 mb-2" scope="col">Short description</th>
+                                </tr>
+                                <tr>
+                                    <td x-text="value.vendorProject"></td>
+                                    <td x-text="value.dateAdded"></td>
+                                    <td x-text="value.shortDescription"></td>
+                                    </tr> 
+                                </table>  
+                                </template>
+                              </div>
+                            </div>
+                            </template>
+                          <script type="text/javascript">
+                            function productSearch() {
+                              return {
+                                product: "Product name",
+                                value: null,
+                                isLoading: false,
+                                fetchProduct() {
+                                  this.isLoading = true;
+                                  fetch(`http://localhost:8051/product/${this.product}`)
+                                    .then((res) => res.json())
+                                    .then((data) => {
+                                      this.isLoading = false;
+                                      this.value = data;
+                                    });
+                                },
+                              };
+                            }
+                          </script>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <!-- List -->
         <div
         x-cloak
         x-data="{cveList: [], 'isLoading': true}"
@@ -114,11 +241,11 @@
         .then(response => response.json())
         .then(response => { cveList = response; isLoading = false; console.log(response); })"
         >
-        <section class="page-section bg-secondary" id="about">
+        <section class="page-section bg-secondary" id="list">
             <div class="container px-2 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Common vulnerabilities exploited by CISA</h2>
+                        <h2 class="text-white mt-0">Common vulnerabilities exploited provided by CISA</h2>
                         <hr class="divider divider-light" />
                         <h1 x-show="isLoading">Loading...</h1>      
                         <table x-show="!isLoading" class="text-white-75 mb-4 table">
@@ -142,86 +269,10 @@
                     </div>
                 </div>
             </div>
-        </section>
-<!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6 text-center">
-                        <h2 class="mt-0">Let's Get In Touch!</h2>
-                        <hr class="divider" />
-                        <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
-                    </div>
-                </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-                    <div class="col-lg-6">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
-                        </form>
-                    </div>
-                </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                        <div>+1 (555) 123-4567</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        </section>        
         <!-- Footer-->
         <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Company Name</div></div>
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Defreddy @ GitHub</div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
