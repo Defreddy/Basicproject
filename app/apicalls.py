@@ -1,7 +1,7 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy.types import String, Text, Date, Integer
 from fastapi.middleware.cors import CORSMiddleware
-from datetime import date
 
 from . import crud, model, schema
 from .database import SessionLocal, engine
@@ -58,7 +58,7 @@ def read_users(db: Session = Depends(get_db)):
     return users
 
 @app.post("/createcve/", response_model=schema.Cve)
-def create_cve(cve: schema.CveCreate, product=str, dateAdded=date, db: Session = Depends(get_db)):
+def create_cve(cve: schema.CveCreate, product=Text, dateAdded=Date, db: Session = Depends(get_db)):
     db_cve = crud.get_cve(db, cveName=cve.cveName)
     if db_cve:
         raise HTTPException(status_code=400, detail="CVE already registered")
