@@ -46,7 +46,7 @@ def read_cveName(cveName: str, db: Session = Depends(get_db)):
 
 @app.get("/product/{product}", response_model=schema.Cve)
 def read_cveName(product: str, db: Session = Depends(get_db)):
-    db_cve = crud.get_cve(db, product=product)
+    db_cve = crud.get_cveProducts(db, product=product)
     if db_cve is None:
         raise HTTPException(status_code=404, detail="CVE not found")
     return db_cve
