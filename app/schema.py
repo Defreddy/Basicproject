@@ -1,5 +1,6 @@
 from datetime import date
 from pydantic import BaseModel
+from pydantic.schema import Optional
 
 class CveBase(BaseModel):
     cveID: int
@@ -9,14 +10,14 @@ class CveCreate(CveBase):
     pass    
 
 class Cve(CveBase):
-    vendorProject: str
-    product: str
-    vulnerabilityName: str
-    dateAdded: date
-    shortDescription: str
-    requiredAction: str
-    dueDate: date
-    notes: str
+    vendorProject: Optional[str]
+    product: Optional[str]
+    vulnerabilityName: Optional[str]
+    dateAdded: Optional[date]
+    shortDescription: Optional[str]
+    requiredAction: Optional[str]
+    dueDate: Optional[date]
+    notes: Optional[str]
 
     class Config:
         orm_mode = True
