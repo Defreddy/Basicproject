@@ -14,7 +14,7 @@ class Cve(BaseModel):
     notes: str
 
     class Config:
-            orm_mode = True
+        orm_mode = True
 
 class CveCreate(Cve):
     pass    
