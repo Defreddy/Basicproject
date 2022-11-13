@@ -30,7 +30,7 @@ def read_user(cveID: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
 
-@app.get("/cve/{cveName}", response_model=schema.Cve)
+@app.get("/cveName/{cveName}", response_model=schema.Cve)
 def read_user(cveName: str, db: Session = Depends(get_db)):
     db_user = crud.get_cve(db, cveName=cveName)
     if db_user is None:
