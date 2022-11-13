@@ -5,6 +5,7 @@ from pydantic.schema import Optional
 class CveBase(BaseModel):
     cveID: int
     cveName: str
+    vendorProject: str
     product: str
     dateAdded: date
 
@@ -12,7 +13,6 @@ class CveCreate(CveBase):
     pass    
 
 class Cve(CveBase):
-    vendorProject: Optional[str]
     vulnerabilityName: Optional[str]
     shortDescription: Optional[str]
     requiredAction: Optional[str]
