@@ -15,7 +15,7 @@ def get_all(db: Session, skip: int = 0, limit: int = 100):
     return db.query(model.Cve).offset(skip).limit(limit).all()
 
 def create_cve(db: Session, cve: schema.CveCreate):
-    db_cve = model.Cve(cveName=cve.cveName, product=cve.product,vendorProject=cve.vendorProject)
+    db_cve = model.Cve(cveName=cve.cveName, product=cve.product,vendorProject=cve.vendorProject,dateAdded=cve.dateAdded)
     db.add(db_cve)
     db.commit()
     db.refresh(db_cve)
