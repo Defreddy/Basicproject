@@ -32,3 +32,4 @@ services:
     container_name: basicproject
     ports:
       - "8051:8051"
+    restart: always
