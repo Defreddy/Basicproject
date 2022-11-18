@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+from app.model import Cve
 from . import model, schema
 
 
@@ -9,7 +10,11 @@ def get_cve(db: Session, cveName: str):
     return db.query(model.Cve).filter(model.Cve.cveName == cveName).first()
 
 def get_cveProducts(db: Session, product: str):
-    return db.query(model.Cve).filter(model.Cve.product == product)
+    return db.query(model.Cve).filter(model.Cve.product == product).first()
+
+def get_cveProduct(db: Session, query: str):
+    products = db.query(Cve).filter(Cve.product.contains(query))
+    return products
 
 def get_all(db: Session, skip: int = 0, limit: int = 100):
     return db.query(model.Cve).offset(skip).limit(limit).all()
