@@ -9,7 +9,7 @@ def get_cve(db: Session, cveName: str):
     return db.query(model.Cve).filter(model.Cve.cveName == cveName).first()
 
 def get_cveProducts(db: Session, product: str):
-    return db.query(model.Cve).filter(model.Cve.product == product).all()
+    return db.query(model.Cve).filter(model.Cve.product == product)
 
 def get_all(db: Session, skip: int = 0, limit: int = 100):
     return db.query(model.Cve).offset(skip).limit(limit).all()
