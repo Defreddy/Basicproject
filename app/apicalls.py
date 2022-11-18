@@ -1,6 +1,7 @@
 from fastapi import Depends, FastAPI, HTTPException, Query
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
+from typing import List
 
 from . import crud, model, schema
 from .database import SessionLocal, engine
@@ -44,17 +45,17 @@ def read_cveName(cveName: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="CVE not found")
     return db_cve
 
-@app.get("/product/{product}", response_model=list[schema.Cve])
-def read_cveName(product: str, db: Session = Depends(get_db)):
-    db_cve = crud.get_cveProducts(db, product=product)
-    if db_cve is None:
-        raise HTTPException(status_code=404, detail="CVE not found")
-    return db_cve
-
 #@app.get("/product/{product}", response_model=list[schema.Cve])
-#def read_users(product: str, db: Session = Depends(get_db)):
-#    users = db.query(model.Cve).get_cveProducts(db, product=product).all()
-#    return users
+#def read_cveName(product: str, db: Session = Depends(get_db)):
+#    db_cve = crud.get_cveProducts(db, product=product)
+#    if db_cve is None:
+#        raise HTTPException(status_code=404, detail="CVE not found")
+#    return db_cve
+
+@app.get("/product/", response_model=list[schema.Cve])
+def read_users(product: List[str], db: Session = Depends(get_db)):
+    users = db.query(model.Cve).get_cveProducts(db, product=product)
+    return users
 
 @app.get("/allcve/", response_model=list[schema.Cve])
 def read_users(db: Session = Depends(get_db)):
