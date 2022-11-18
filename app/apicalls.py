@@ -53,9 +53,9 @@ def read_cveName(cveName: str, db: Session = Depends(get_db)):
 #    return db_cve
 
 @app.get("/product/", response_model=schema.Cve)
-def read_users(request: Request, db: Session = Depends(get_db), query: Optional[str] = None):
-    products = crud.get_cveProduct(db=db, query=query)
-    return {"request": request, "product": products}
+def read_users(db: Session = Depends(get_db), product: Optional[str] = None):
+    products = crud.get_cveProduct(db=db, product=product)
+    return products
 
 #def search(request: Request, db: Session = Depends(get_db), query: Optional[str] = None
 #):
