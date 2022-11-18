@@ -12,8 +12,8 @@ def get_cve(db: Session, cveName: str):
 def get_cveProducts(db: Session, product: str):
     return db.query(model.Cve).filter(model.Cve.product == product).first()
 
-def get_cveProduct(db: Session, product: str):
-    products = db.query(model.Cve).filter(model.Cve.product.contains(product))
+def get_cveProduct(db: Session, product: str, cve: schema.Cve):
+    products = db.query(model.Cve).filter(model.Cve.product.contains(product), cveName=cve.cveName, vendorProject=cve.vendorProject, dateAdded=cve.dateAdded)
     return products
 
 def get_all(db: Session, skip: int = 0, limit: int = 100):
