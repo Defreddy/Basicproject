@@ -1,4 +1,4 @@
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Query
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -44,9 +44,9 @@ def read_cveName(cveName: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="CVE not found")
     return db_cve
 
-@app.get("/product/{product}", response_model=schema.Cve)
+@app.get("/product/{product}", response_model=list[schema.Cve])
 def read_cveName(product: str, db: Session = Depends(get_db)):
-    db_cve = crud.get_cveProducts(db, product=product)
+    db_cve = crud.get_cveProducts(db, product= list[product])
     if db_cve is None:
         raise HTTPException(status_code=404, detail="CVE not found")
     return db_cve

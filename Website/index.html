@@ -110,11 +110,13 @@
                         <p class="text-muted mb-5">Cybersecurity means working together. Add a new CVE today to keep others notified about new vulnerabilitie and exploits.</p>
                     </div>
                 </div>
+
                 <div x-data="{
                     responsedata: null,
                     postcve: null,
                     postvendor: null,
                     postproduct:null,
+                    postdate:null,
                     async callmethod1() {
                         this.responsedata = await (await fetch('http://localhost:8051/createcve/', 
                         {
@@ -124,7 +126,7 @@
                                 cveName: this.postcve,
                                 vendorProject: this.postvendor,
                                 product: this.postproduct,
-                                dateAdded: '2022-11-13',
+                                dateAdded: this.postdate,
                             }),
                             headers: {
                                 'Content-type': 'application/json; charset=UTF-8',
@@ -134,7 +136,6 @@
                         console.log(this.responsedata);
                     },
                 }">  
-                    <p>The following CVE has been added <strong x-text="responsedata.cveName"></strong></p>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div class="col-lg-6">
                         <form id="contactForm" class="was-validated">
@@ -162,11 +163,23 @@
                                     Please enter a valid product name
                                   </div>
                             </div>
+
+                            <!-- Date input-->
+                            <div class="form-floating">
+                                <input class="form-control form-check-label" id="product" name="date" type="date" x-model="postdate" type="product" placeholder="Year-Month-Day"  required />
+                                <label for="product" type="date">Product name</label>
+                                <div class="invalid-feedback">
+                                    Please enter a valid date
+                                  </div>
+                            </div>
+
                             <!-- error message-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
                             <div class="d-grid"><button class="btn btn-primary btn-xl" x-on:click="callmethod1" id="submitButton" type="submit">Submit</button></div>
                         </form>
+
+                        <p>The following CVE has been added <strong x-text="responsedata.cveName"></strong></p>
                     </div>
                 </div>
             </div>
@@ -285,6 +298,5 @@
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
