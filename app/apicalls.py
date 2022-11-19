@@ -65,7 +65,7 @@ def read_users(query: str, db: Session = Depends(get_db)):
 
 @app.get("/allcve/", response_model=list[schema.Cve])
 async def read_users(db: Session = Depends(get_db)):
-    users = crud.get_all(db)
+    users = db.query.all()
     return users
 
 @app.post("/createcve/", response_model=schema.Cve)
