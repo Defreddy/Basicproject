@@ -1,21 +1,32 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 
-# DEFINE THE DATABASE CREDENTIALS
-user = 'root'
-password = 'abc123'
-host = 'db'
-# veranderen naar 'db' of 'localhost' voor deployment!!
-port = 3306
-database = 'cve'
+dotenv_path = Path('.env')
+load_dotenv(dotenv_path=dotenv_path)
+
+username = os.getenv('user')
+password = os.getenv('password')
+host = os.getenv('host')
+port = os.getenv('port')
+database = os.getenv('database')
+
+print(username)
+print(password)
+print(host)
+print(port)
+print(database)
+
   
 # PYTHON FUNCTION TO CONNECT TO THE MYSQL DATABASE AND
 # RETURN THE SQLACHEMY ENGINE OBJECT
 def get_connection():
     return create_engine(
         url="mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(
-            user, password, host, port, database
+            username, password, host, port, database
         )
 
     )
