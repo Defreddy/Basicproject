@@ -1,4 +1,4 @@
-FROM python:3.10.0-alpine
+FROM python:3.11.0-slim
 RUN apk add build-base linux-headers
 RUN python -m pip install -q --upgrade pip setuptools wheel
 WORKDIR /code
