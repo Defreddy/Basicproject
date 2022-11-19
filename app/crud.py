@@ -19,8 +19,8 @@ def get_cveProducts(db: Session, query: str):
         listProducts.append(prod)
     return listProducts
 
-def get_all(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(model.Cve).offset(skip).limit(limit).all()
+def get_all(db: Session, skip: int = 0):
+    return db.query(model.Cve).offset(skip).all()
 
 def create_cve(db: Session, cve: schema.CveCreate):
     db_cve = model.Cve(cveName=cve.cveName, product=cve.product,vendorProject=cve.vendorProject,dateAdded=cve.dateAdded)
