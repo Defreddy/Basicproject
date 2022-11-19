@@ -1,5 +1,5 @@
 FROM python:3.11.0-slim
-RUN apt-get add build-base linux-headers
+RUN apt-get build-base linux-headers
 RUN python -m pip install -q --upgrade pip setuptools wheel
 WORKDIR /code
 EXPOSE 8000
