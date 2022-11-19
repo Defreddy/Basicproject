@@ -13,6 +13,8 @@ services:
     restart: always
     expose:
       - "3306"
+    env_file:
+        - .env
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -33,3 +35,5 @@ services:
     ports:
       - "8051:8051"
     restart: always
+    env_file:
+        - .env
