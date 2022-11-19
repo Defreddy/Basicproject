@@ -69,7 +69,7 @@ def read_users(db: Session = Depends(get_db)):
     return users
 
 @app.post("/createcve/", response_model=schema.Cve)
-async def create_cve(cve: schema.CveCreate, db: Session = Depends(get_db)):
+def create_cve(cve: schema.CveCreate, db: Session = Depends(get_db)):
     db_cve = crud.get_cve(db, cveName=cve.cveName)
     if db_cve:
         raise HTTPException(status_code=400, detail="CVE already registered")
