@@ -45,23 +45,10 @@ def read_cveName(cveName: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="CVE not found")
     return db_cve
 
-#@app.get("/product/{product}", response_model=list[schema.Cve])
-#def read_cveName(product: str, db: Session = Depends(get_db)):
-#    db_cve = crud.get_cveProducts(db, product=product)
-#    if db_cve is None:
-#        raise HTTPException(status_code=404, detail="CVE not found")
-#    return db_cve
-
 @app.get("/product/", response_model=list[schema.Cve])
 def read_users(query: str, db: Session = Depends(get_db)):
     products = crud.get_cveProducts(db, query=query)
     return products
-
-#def search(request: Request, db: Session = Depends(get_db), query: Optional[str] = None
-#):
-#    jobs = search_job(query, db=db)
-#    return templates.TemplateResponse("general_pages/homepage.html", {"request": request, "jobs": jobs}
-#    )
 
 @app.get("/allcve/", response_model=list[schema.Cve])
 def read_users(db: Session = Depends(get_db)):
@@ -69,7 +56,7 @@ def read_users(db: Session = Depends(get_db)):
     return users
 
 @app.post("/createcve/", response_model=schema.Cve)
-def create_cve(cve: schema.CveCreate, db: Session = Depends(get_db)):
+async def create_cve(cve: schema.CveCreate, db: Session = Depends(get_db)):
     db_cve = crud.get_cve(db, cveName=cve.cveName)
     if db_cve:
         raise HTTPException(status_code=400, detail="CVE already registered")
