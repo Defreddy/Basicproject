@@ -52,9 +52,9 @@ def read_cveName(cveName: str, db: Session = Depends(get_db)):
 #        raise HTTPException(status_code=404, detail="CVE not found")
 #    return db_cve
 
-@app.get("/product/", response_model=schema.Cve)
-def read_users(db: Session = Depends(get_db), product: str = None):
-    products = crud.get_cveProduct(db, product=product)
+@app.get("/product/", response_model=list[schema.Cve])
+def read_users(query: str, db: Session = Depends(get_db)):
+    products = crud.get_cveProducts(db, query=query)
     return products
 
 #def search(request: Request, db: Session = Depends(get_db), query: Optional[str] = None

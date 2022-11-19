@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 user = 'root'
 password = 'abc123'
 host = 'db'
+# veranderen naar 'db' of 'localhost' voor deployment!!
 port = 3306
 database = 'cve'
   

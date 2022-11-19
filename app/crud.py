@@ -9,12 +9,15 @@ def get_cveid(db: Session, cveID: int):
 def get_cve(db: Session, cveName: str):
     return db.query(model.Cve).filter(model.Cve.cveName == cveName).first()
 
-def get_cveProducts(db: Session, product: str):
+def get_cveProduct(db: Session, product: str):
     return db.query(model.Cve).filter(model.Cve.product == product).first()
 
-def get_cveProduct(db: Session, product: str):
-    products = db.query(model.Cve).filter(model.Cve.product.contains(product), cveName=model.Cve.cveName, vendorProject=model.Cve.vendorProject, dateAdded=model.Cve.dateAdded)
-    return products
+def get_cveProducts(db: Session, query: str):
+    products = db.query(Cve).filter(Cve.product.contains(query)).all()
+    listProducts = []
+    for prod in products:
+        listProducts.append(prod)
+    return listProducts
 
 def get_all(db: Session, skip: int = 0, limit: int = 100):
     return db.query(model.Cve).offset(skip).limit(limit).all()
