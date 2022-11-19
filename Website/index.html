@@ -179,7 +179,7 @@
                             <div class="d-grid"><button class="btn btn-primary btn-xl" x-on:click="callmethod1" id="submitButton" type="submit">Submit</button></div>
                         </form>
 
-                        <p>The following CVE has been added <strong x-text="responsedata.cveName"></strong></p>
+                        <p>The following CVE has been added <strong x-text="responsedata.cve"></strong></p>
                     </div>
                 </div>
             </div>
@@ -208,18 +208,19 @@
                           <template x-if="value">
                             <div class="flex flex-row pt-10">
                               <div class="text-sm justify-center flex flex-col">
-                                <h3 class="text-white-75 text-sm font-bold uppercase leading-none mb-2" x-text="value.cveName"></h3>
                                 <table class="text-white-75 mb-4 table"> 
                                 <tr>
-                                    <th class="h4 mb-2" scope="col">Vendor</th>
+                                    <th class="h4 mb-2" scope="col">CVE</th>
                                     <th class="h4 mb-2" scope="col">Date added</th>
                                     <th class="h4 mb-2" scope="col">Short description</th>
                                 </tr>
-                                <tr>
-                                    <td x-text="value.vendorProject"></td>
-                                    <td x-text="value.dateAdded"></td>
-                                    <td x-text="value.shortDescription"></td>
-                                    </tr> 
+                                    <template x-for="vuln in value" :key="vuln.cveID">
+                                        <tr>
+                                        <td x-text="vuln.cveName"></td>
+                                        <td x-text="vuln.dateAdded"></td>
+                                        <td x-text="vuln.shortDescription"></td>
+                                        </tr>   
+                                    </template>
                                 </table>  
                                 </template>
                               </div>
@@ -233,7 +234,7 @@
                                 isLoading: false,
                                 fetchProduct() {
                                   this.isLoading = true;
-                                  fetch(`http://localhost:8051/product/${this.product}`)
+                                  fetch(`http://localhost:8051/product/?query=${this.product}`)
                                     .then((res) => res.json())
                                     .then((data) => {
                                       this.isLoading = false;
@@ -247,6 +248,7 @@
                 </div>
             </div>
         </section>
+
         <!-- List -->
         <div
         x-cloak
@@ -283,7 +285,8 @@
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>
+        </div>        
         <!-- Footer-->
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Defreddy @ GitHub</div></div>
