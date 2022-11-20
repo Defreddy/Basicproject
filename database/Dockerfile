@@ -1,5 +1,8 @@
 FROM mysql:latest
 
+ARG MYSQL_ROOT
+ENV MYSQL_PASSWORD=$MYSQL_ROOT
+
 RUN chown -R mysql:root /etc/mysql/
 RUN chown -R mysql:root /var/lib/mysql/
 RUN chown -R mysql:root /var/lib/mysql-files
