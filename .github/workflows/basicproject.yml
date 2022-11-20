@@ -30,17 +30,5 @@ jobs:
         run:
           docker build -t ${{ secrets.DOCKER_USER }}/basicproject:latest .
 
-
-
-
-        run: |
-          docker build -t ${{ secrets.DOCKER_USER }}/basicproject:latest .
-          mkdir env
-          touch env/.env
-          echo DOCKER_USER="$DOCKER_USER" >> ./env/.env
-          echo DOCKER_PASSWORD="$DOCKER_PASSWORD" >> ./env/.env
-          ls -a
-          cat env/.env
-
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/basicproject:latest
