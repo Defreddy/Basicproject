@@ -1,5 +1,3 @@
-# Basicproject
-
 <h1 align="center">
   <br>
   <a href="https://github.com/thepiyushmalhotra/thepiyushmalhotra/blob/output/github-contribution-grid-snake.svg"><img src="https://github.com/thepiyushmalhotra/thepiyushmalhotra/blob/output/github-contribution-grid-snake.svg" alt="Snaky"></a>
@@ -8,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">An API and IaC integration with FastAPI<a href="http://electron.atom.io" target="_blank"></a>.</h4>
+<h4 align="center">An API and IaC integration with FastAPI.</h4>
 
 <p align="center">
     API Deployment:
