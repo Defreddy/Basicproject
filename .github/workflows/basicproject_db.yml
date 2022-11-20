@@ -20,8 +20,8 @@ jobs:
         run: |
           mkdir envsql
           touch envsql/.envsql
-          echo MYSQL_DATABASE="$MYSQL_DATABASE" >> ./env/.envsql
-          echo MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD" >> ./env/.envsql
+          echo MYSQL_DATABASE="$MYSQL_DATABASE" >> .envsql/.envsql
+          echo MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD" >> .envsql/.envsql
           ls -a
           cat envsql/.envsql
         shell: bash
