@@ -5,18 +5,11 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
-os.system('ls -al')
-os.system('cat .env')
-
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
 username = os.getenv('USERNAME')
 password = os.getenv('PASS')
-
-print(username)
-print(password)
-
 host = os.getenv('HOST')
 port = os.getenv('PORT')
 database = os.getenv('DATABASE')
