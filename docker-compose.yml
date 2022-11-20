@@ -8,8 +8,6 @@ services:
     environment:
       - MYSQL_DATABASE=cve
       - MYSQL_ROOT_PASSWORD=abc123
-    command:
-      sh -c "pwd && ls -al"
     ports:
       - "3306:3306"
     restart: always
