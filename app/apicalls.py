@@ -10,8 +10,8 @@ model.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 origins = [
-    "https://api-service-defreddy.cloud.okteto.net/",
-    "https://phpmyadmin-defreddy.cloud.okteto.net/"
+    "https://api-service-defreddy.cloud.okteto.net/*",
+    "https://phpmyadmin-defreddy.cloud.okteto.net/*"
 ]
 
 app.add_middleware(
@@ -19,7 +19,7 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=['GET','POST'],
-    allow_headers=["*"],
+    allow_headers=['Permissions-Policy: interest-cohort=()'],
 )
 
 def get_db():
