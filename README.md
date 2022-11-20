@@ -111,3 +111,8 @@ You can view a live version of the provided PHPMyAdmin (server):
 > GitHub pages has disabled the use of POST requests: [POST is not working here!](https://stackoverflow.com/questions/37761926/does-github-pages-allow-http-post-method)
 > The MySQL server is also deployed in Okteto Cloud but cannot be accessed by URL.
 
+## Postman Requests
+
+
+
+## API Calls distilled
