@@ -109,27 +109,6 @@ You can view a live version of the provided PHPMyAdmin (server):
 > GitHub pages has disabled the use of POST requests: [POST is not working here!](https://stackoverflow.com/questions/37761926/does-github-pages-allow-http-post-method)
 > The MySQL server is also deployed in Okteto Cloud but cannot be accessed by URL.
 
-```bash
-# The following links are provided to access the resources in a live environment:
-$ 
-$ 
-
-# Go into the repository
-$ cd Basicproject
-
-# Make sure to launch Docker Desktop and simply run
-$ docker compose up
-
-# A variety of links can be accessed including the following:
-$ localhost:8051  | This is your API website / Alpine / Slim.
-$ localhost:8082  | This is your PHPMyAdmin - which will provide a much easier way of working with the MySQL DB. 
-                  | Simply use the basic credentials: root & abc123 provided in the docker-compose.yml.
-$ index.html      | You can simply open up the index.html locally to get a localhost view on your API calls!
-                  | You can access this file in the Website folder.
-```
-
-
-
 ## Download
 
 You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
