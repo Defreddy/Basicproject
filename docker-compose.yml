@@ -6,8 +6,8 @@ services:
     image: freds00n/basicproject_db:latest
     container_name: mysql-basicproject
     environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=cve
+      - MYSQL_ROOT_PASSWORD=abc123
     command:
       sh -c "pwd && ls -al"
     ports:
