@@ -10,7 +10,7 @@ model.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 origins = [
-    "http://localhost",
+    "https://phpmyadmin-defreddy.cloud.okteto.net/",
     "http://localhost:8051",
     "http://127.0.0.1:8051"
 ]
