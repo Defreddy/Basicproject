@@ -1,10 +1,5 @@
 FROM mysql:latest
 
-RUN --mount=type=secret,id=MYSQL_DATABASE \
-  --mount=type=secret,id=MYSQL_ROOT_PASSWORD \
-   export MYSQL_DATABASE=$(cat /run/secrets/MYSQL_DATABASE) && \
-   export MYSQL_ROOT_PASSWORD=$(cat /run/secrets/MYSQL_ROOT_PASSWORD) &&
-
 RUN chown -R mysql:root /etc/mysql/
 RUN chown -R mysql:root /var/lib/mysql/
 RUN chown -R mysql:root /var/lib/mysql-files
