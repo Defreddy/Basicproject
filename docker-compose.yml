@@ -6,8 +6,8 @@ services:
     image: freds00n/basicproject_db:latest
     container_name: mysql-basicproject
     environment:
-      - MYSQL_DATABASE=${{ secrets.DATABASE }}
-      - MYSQL_ROOT_PASSWORD=${{ secrets.PASSWORD }}
+      - MYSQL_DATABASE=${MYSQL_DB}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT}
     ports:
       - "3306:3306"
     restart: always
