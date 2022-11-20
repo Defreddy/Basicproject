@@ -21,7 +21,7 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=['GET','POST'],
-    allow_headers=['Permissions-Policy: interest-cohort=()'],
+    allow_headers=['*'],
 )
 
 def get_db():
