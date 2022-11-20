@@ -1,5 +1,9 @@
 FROM mysql:latest
 
+COPY envsql/.env .env
+RUN ls -a
+RUN cat .env
+
 RUN chown -R mysql:root /etc/mysql/
 RUN chown -R mysql:root /var/lib/mysql/
 RUN chown -R mysql:root /var/lib/mysql-files
@@ -9,9 +13,5 @@ ADD known_exploited_vulnerabilities.csv /var/lib/mysql-files/known_exploited_vul
 ADD init.sql /docker-entrypoint-initdb.d
 
 RUN sed -i 's/MYSQL_DATABASE/'cve'/g' /var/lib/mysql-files/init.sql
-
-COPY envsql/.env .env
-RUN ls -a
-RUN cat .env
 
 EXPOSE 3306:3306 
