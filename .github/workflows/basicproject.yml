@@ -24,7 +24,7 @@ jobs:
           mkdir env
           touch env/.env
           echo USERNAME="$USERNAME" >> ./env/.env
-          echo PASSWORD="$PASSWORD" >> ./env/.env
+          echo PASS="$PASSWORD" >> ./env/.env
           echo HOST="$HOST" >> ./env/.env
           echo PORT="$PORT" >> ./env/.env
           echo DATABASE="$DATABASE" >> ./env/.env
