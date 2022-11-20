@@ -105,6 +105,8 @@ You can view a live version of the provided API itself (server):
 You can view a live version of the provided PHPMyAdmin (server):
 * [PHPMyAdmin](https://phpmyadmin-defreddy.cloud.okteto.net/)
 
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/CVE-Details.png)
+
 > **Note**
 > GitHub pages has disabled the use of POST requests: [POST is not working here!](https://stackoverflow.com/questions/37761926/does-github-pages-allow-http-post-method)
 > The MySQL server is also deployed in Okteto Cloud but cannot be accessed by URL.
