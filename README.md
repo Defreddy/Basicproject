@@ -35,8 +35,8 @@
 ## Key Features
 
 ### General requirements
-- [x] 1 API in GitHub Repostiory: <a href="https://github.com/Defreddy/Basicproject_frederikcrauwels" target="_blank">.
-- [x] 1 Front-end in GitHub repository: <a href="https://github.com/Defreddy/Defreddy.github.io" target="_blank">.
+- [x] 1 API in GitHub Repostiory: <a href="https://github.com/Defreddy/Basicproject_frederikcrauwels" target="_blank">Take a look at THIS repo (the one you are currently viewing...</a>.
+- [x] 1 Front-end in GitHub repository: <a href="https://github.com/Defreddy/Defreddy.github.io" target="_blank">Github.io pages setup (is not fully functioning - POST requests do not work with GitHub pages</a>.
 - [x] Description of the chosen theme, API, Front-end and link(s) + README.md customization.
 - [x] Postman requests of API + screenshots README.md.
 - [x] OpenAPI Docs screenhots README.md.
