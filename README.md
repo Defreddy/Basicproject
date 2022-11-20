@@ -24,7 +24,7 @@
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#chosen-theme">Chosen Theme</a> •
-  <a href="#usage-and-links">Usage and link(s)</a> •
+  <a href="#usage-and-links">Usage and links</a> •
   <a href="#postman-requests">Postman Requests</a> •
   <a href="#additional-requests">Additional requests</a>
 </p>
