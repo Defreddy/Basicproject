@@ -16,6 +16,7 @@
     <img src="https://img.shields.io/docker/automated/freds00n/basicproject?style=for-the-badge"
          alt="API">
   </a>
+    Database Deployment:
     <a href="https://hub.docker.com/repository/docker/freds00n/basicproject" target="_blank">
     <img src="https://img.shields.io/docker/automated/freds00n/basicproject?style=for-the-badge"
          alt="API">
