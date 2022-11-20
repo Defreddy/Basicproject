@@ -94,8 +94,19 @@ $ index.html      | You can simply open up the index.html locally to get a local
 > You must adjust the CORS table (allow_origins=['*'] = easiest way) and the GitHub secrets will not work for basicproject.yml. You could still define your own .env file!
 
 You can view a live version of the provided API:
-* - [Here you can view the live website on GitHub pages - POST is NOT working here]()
-[Here you can view the live website on sinners webhosting - POST DOES WORK here]()
+* [Here you can view the live website on GitHub pages - POST is NOT working here](https://defreddy.github.io/)
+* [Here you can view the live website on sinners webhosting - POST DOES WORK here](https://frederikcrauwels.sinners.be/)
+
+You can view a live version of the provided API itself (server):
+* [Okteto API deployment](https://api-service-defreddy.cloud.okteto.net/docs)
+
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/FastAPI-DOCS.png)
+
+You can view a live version of the provided PHPMyAdmin (server):
+* [PHPMyAdmin](https://phpmyadmin-defreddy.cloud.okteto.net/)
+
+> **Note**
+> The MySQL server is also deployed in Okteto Cloud but cannot be accessed by URL.
 
 ```bash
 # The following links are provided to access the resources in a live environment:
