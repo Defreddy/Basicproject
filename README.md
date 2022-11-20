@@ -17,16 +17,9 @@
          alt="API">
   </a>
     Database Deployment:
-    <a href="https://hub.docker.com/repository/docker/freds00n/basicproject" target="_blank">
-    <img src="https://img.shields.io/docker/automated/freds00n/basicproject?style=for-the-badge"
-         alt="API">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
+    <a href="https://hub.docker.com/repository/docker/freds00n/basicproject_db" target="_blank">
+    <img src="https://img.shields.io/docker/automated/freds00n/basicproject_db?style=for-the-badge"
+         alt="DB">
   </a>
 </p>
 
