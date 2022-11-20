@@ -69,6 +69,8 @@
 
 The theme has been chosen based upon CVEs and vulnerabilities. A CVE are [Common Vulnerabilities and Exposures](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures). The list has been provided by CISA, documenting [known and actively exploited vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog).
 
+## Usage and link(s)
+
 ```bash
 # Clone this repository or simply open via GitHub Desktop!
 $ git clone https://github.com/Defreddy/Basicproject.git
@@ -90,6 +92,28 @@ $ index.html      | You can simply open up the index.html locally to get a local
 > **Note**
 > Certain URLs / parameters in this project need to be adjusted accordingly. There is a website available with <localhost> parameters.
 > You must adjust the CORS table (allow_origins=['*'] = easiest way) and the GitHub secrets will not work for basicproject.yml. You could still define your own .env file!
+
+You can view a live version of the provided API:
+
+```bash
+# The following links are provided to access the resources in a live environment:
+$ [Here you can view the live website on GitHub pages - POST is NOT working here]()
+$ [Here you can view the live website on sinners webhosting - POST DOES WORK here]()
+
+# Go into the repository
+$ cd Basicproject
+
+# Make sure to launch Docker Desktop and simply run
+$ docker compose up
+
+# A variety of links can be accessed including the following:
+$ localhost:8051  | This is your API website / Alpine / Slim.
+$ localhost:8082  | This is your PHPMyAdmin - which will provide a much easier way of working with the MySQL DB. 
+                  | Simply use the basic credentials: root & abc123 provided in the docker-compose.yml.
+$ index.html      | You can simply open up the index.html locally to get a localhost view on your API calls!
+                  | You can access this file in the Website folder.
+```
+
 
 
 ## Download
