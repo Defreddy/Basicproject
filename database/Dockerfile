@@ -13,5 +13,6 @@ ADD known_exploited_vulnerabilities.csv /var/lib/mysql-files/known_exploited_vul
 ADD init.sql /docker-entrypoint-initdb.d
 
 RUN sed -i 's/MYSQL_DATABASE/'cve'/g' /var/lib/mysql-files/init.sql
+RUN pwd
 
 EXPOSE 3306:3306 
