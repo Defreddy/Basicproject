@@ -34,33 +34,36 @@
 
 ## Key Features
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
+# General requirements
+- [x] 1 API in GitHub Repostiory: 
+- [x] 1 Front-end in GitHub repository:
+- [x] Description of the chosen theme, API, Front-end and link(s) + README.md customization.
+- [x] Postman requests of API + screenshots README.md.
+- [x] OpenAPI Docs screenhots README.md.
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+# REST API
+
+- [x] At least 2 GET Endpoints (4 provided).
+- [x] At least 1 POST endpoint (1 provided).
+- [x] Validations.
+- [x] Usage of path parameters, query parameters and body.
+
+# DEPLOYING
+
+- [x] API Docker container automation via GitHub Actions (2x provided for DB and API image).
+- [x] API Docker container deployment via Okteto Cloud and Docker Compose.
+
+# FRONT-END
+
+- [x] Simple front-end, based on AlpineJS -> This has been changed to python:3.11.0-slim.
+- [x] Deployment of front-end.
+
+# ADDITIONAL FACTORS
+
+- [x] Front-end styling (CCS - BootStrap Theme).
+- [x] API interaction with Database (MySQL).
+- [x] Additional inspiration... (PHPMyAdmin, .env file inside API container including GitHub secrets, CORS and additional GET requests, DB automation deployment with init.sql and .csv input file).
+
 
 ## How To Use
 
