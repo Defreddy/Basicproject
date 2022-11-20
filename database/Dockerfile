@@ -1,8 +1,10 @@
 FROM mysql:latest
 
-COPY envsql/.env .env
+RUN --mount=type=secret,id=MYSQL_DATABASE \
+  --mount=type=secret,id=MYSQL_ROOT_PASSWORD \
+   export MYSQL_DATABASE=$(cat /run/secrets/MYSQL_DATABASE) && \
+   export MYSQL_ROOT_PASSWORD=$(cat /run/secrets/MYSQL_ROOT_PASSWORD) &&
 
-RUN chown -R mysql:root .env
 RUN chown -R mysql:root /etc/mysql/
 RUN chown -R mysql:root /var/lib/mysql/
 RUN chown -R mysql:root /var/lib/mysql-files
@@ -15,6 +17,3 @@ RUN sed -i 's/MYSQL_DATABASE/'cve'/g' /var/lib/mysql-files/init.sql
 
 EXPOSE 3306:3306 
 
-RUN pwd
-RUN ls -a
-RUN cat ./.env

@@ -6,26 +6,16 @@ jobs:
   delivery:
     runs-on: ubuntu-latest
     name: Deliver container
-    env:
-      MYSQL_DATABASE: ${{ secrets.DATABASE }}
-      MYSQL_ROOT_PASSWORD: ${{ secrets.PASSWORD }}
+    with:
+      secrets: |
+       "MYSQL_DATABASE= ${{ secrets.DATABASE }}"
+        "MYSQL_ROOT_PASSWORD= ${{ secrets.PASSWORD }}"
     steps:
       - name: Check out repository
         uses: actions/checkout@v1
 
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: create .env file
-        run: |
-          cd ./database
-          mkdir envsql
-          touch envsql/.env
-          echo MYSQL_DATABASE="$MYSQL_DATABASE" >> ./envsql/.env
-          echo MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD" >> ./envsql/.env
-          ls -a
-          cat envsql/.env
-        shell: bash
 
       - name: Docker Build
         run: docker build -t ${{ secrets.DOCKER_USER }}/basicproject_db:latest ./database
