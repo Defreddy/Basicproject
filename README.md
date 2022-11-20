@@ -1,22 +1,14 @@
 # Basicproject
 
-<h1>
-  IaC deployment with API integrations.
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
-</h1>
-
-![Snake animation](https://github.com/thepiyushmalhotra/thepiyushmalhotra/blob/output/github-contribution-grid-snake.svg)
-
-
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a>
+  <a href=""><img src="https://github.com/thepiyushmalhotra/thepiyushmalhotra/blob/output/github-contribution-grid-snake.svg" alt="Snaky" width="200"></a>
   <br>
-  Markdownify
+  IaC deployment with API integrations
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">An API and IaC integration with FastAPI<a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
