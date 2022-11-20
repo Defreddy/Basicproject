@@ -19,11 +19,11 @@ jobs:
           MYSQL_ROOT_PASSWORD: ${{ secrets.PASSWORD }}
         run: |
           mkdir envsql
-          touch envsql/.envsql
-          echo MYSQL_DATABASE="$MYSQL_DATABASE" >> .envsql/.envsql
-          echo MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD" >> .envsql/.envsql
+          touch envsql/.env
+          echo MYSQL_DATABASE="$MYSQL_DATABASE" >> .envsql/.env
+          echo MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD" >> .envsql/.env
           ls -a
-          cat envsql/.envsql
+          cat envsql/.env
         shell: bash
 
       - name: Docker Build
