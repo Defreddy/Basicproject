@@ -4,7 +4,6 @@ services:
 
   db:
     image: freds00n/basicproject_db:latest
-    command: pwd
     container_name: mysql-basicproject
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
