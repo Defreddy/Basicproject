@@ -8,15 +8,11 @@ import os
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
-docker = {{ secrets.DOCKER_USER }}
-
-print(docker)
-
-username = os.getenv('user')
-password = os.getenv('password')
-host = os.getenv('host')
-port = os.getenv('port')
-database = os.getenv('database')
+username = os.environ('user')
+password = os.environ('password')
+host = os.environ('host')
+port = os.environ('port')
+database = os.environ('database')
   
 # PYTHON FUNCTION TO CONNECT TO THE MYSQL DATABASE AND
 # RETURN THE SQLACHEMY ENGINE OBJECT
