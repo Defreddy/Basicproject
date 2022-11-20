@@ -12,7 +12,7 @@ dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
 username = os.getenv('USERNAME')
-password = os.getenv('PASSWORD')
+password = os.getenv('PASS')
 
 print(username)
 print(password)
