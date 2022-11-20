@@ -18,6 +18,7 @@ jobs:
           MYSQL_DATABASE: ${{ secrets.DATABASE }}
           MYSQL_ROOT_PASSWORD: ${{ secrets.PASSWORD }}
         run: |
+          cd ./database
           mkdir envsql
           touch envsql/.env
           echo MYSQL_DATABASE="$MYSQL_DATABASE" >> ./envsql/.env
