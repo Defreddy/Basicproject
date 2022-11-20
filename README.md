@@ -91,9 +91,22 @@ $ index.html      | You can simply open up the index.html locally to get a local
 > Certain URLs / parameters in this project need to be adjusted accordingly. There is a website available with <localhost> parameters.
 > You must adjust the CORS table (allow_origins=['*'] = easiest way) and the GitHub secrets will not work for basicproject.yml. You could still define your own .env file!
 
-You can view a live version of the provided API:
+You can view a live version of the provided APIs:
 * [Here you can view the live website on GitHub pages - POST is NOT working here](https://defreddy.github.io/)
 * [Here you can view the live website on sinners webhosting - POST DOES WORK here](https://frederikcrauwels.sinners.be/)
+
+On these webpages you can:
+* [Obtain a CVE by its name (GET - cveName)](https://frederikcrauwels.sinners.be/#page-top)
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/searchCVE.png)
+
+* [Create a new CVE with additional details (POST - createcve)](https://frederikcrauwels.sinners.be/#add)
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/newCVE.png)
+
+* [Obtain a better view on a variety of CVEs based on product name (GET - ?query=PRODUCT NAME)](https://frederikcrauwels.sinners.be/#product)
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/Products.png)
+
+* [View all available CVEs based on the provided data in the DB (GET - allcve)](https://frederikcrauwels.sinners.be/#list)
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/allCVE.png)
 
 You can view a live version of the provided API itself (server):
 * [Okteto API deployment DOCS](https://api-service-defreddy.cloud.okteto.net/docs)
