@@ -8,7 +8,7 @@ ADD init.sql /var/lib/mysql-files/init.sql
 ADD known_exploited_vulnerabilities.csv /var/lib/mysql-files/known_exploited_vulnerabilities.csv
 ADD init.sql /docker-entrypoint-initdb.d
 
-COPY env/.envsql .env
+COPY envsql/.envsql .env
 RUN ls -a
 RUN cat .env
 
