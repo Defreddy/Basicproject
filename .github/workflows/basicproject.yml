@@ -13,10 +13,6 @@ jobs:
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Docker Build
-        run:
-          docker build -t ${{ secrets.DOCKER_USER }}/basicproject:latest .
-
       - name: create .env file
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
@@ -29,6 +25,11 @@ jobs:
           ls -a
           cat env/.env
         shell: bash
+
+      - name: Docker Build
+        run:
+          docker build -t ${{ secrets.DOCKER_USER }}/basicproject:latest .
+
 
 
 
