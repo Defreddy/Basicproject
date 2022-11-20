@@ -23,11 +23,10 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="#chosen-theme">Chosen Theme</a> •
+  <a href="#usage-and-link(s)">Usage and link(s)</a> •
+  <a href="#postman-requests">Postman Requests</a> •
+  <a href="#additional-requests">Additional requests</a> •
 </p>
 
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/website.png)
