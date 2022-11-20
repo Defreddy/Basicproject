@@ -146,6 +146,7 @@ As the assignment is primarily focussed around API calls - additional points cou
 - [x] .env file inside API container including GitHub secrets - this part of the integration will make sure certain parameters are hidden from others.
 - [x] Additioan GET requests (required 2, created 4).
 - [x] CORS has been adjusted to be able to acces both GitHub pages and custom-hosted solution.
+- [x] A complete IaC deployment thanks to multiple Dockerfiles, GitHub workflows / actions and docker-compose.yml
 
 
 
