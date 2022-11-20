@@ -8,8 +8,12 @@ import os
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
-username = os.environ('user')
-password = os.environ('password')
+username = os.environ('DOCKER_USER')
+password = os.environ('DOCKER_PASSWORD')
+
+print(username)
+print(password)
+
 host = os.environ('host')
 port = os.environ('port')
 database = os.environ('database')
