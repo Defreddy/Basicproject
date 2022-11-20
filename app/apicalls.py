@@ -10,16 +10,15 @@ model.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 origins = [
-    "https://phpmyadmin-defreddy.cloud.okteto.net/",
-    "http://localhost:8051",
-    "http://127.0.0.1:8051"
+    "https://api-service-defreddy.cloud.okteto.net/",
+    "https://phpmyadmin-defreddy.cloud.okteto.net/"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=['GET','POST'],
     allow_headers=["*"],
 )
 
