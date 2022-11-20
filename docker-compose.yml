@@ -8,18 +8,13 @@ services:
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    command: [
-      'bash',
-      '-c',
-      'echo "$${MYSQL_DATABASE}:$${MYSQL_ROOT_PASSWORD}"'
-      ]
     ports:
       - "3306:3306"
     restart: always
     expose:
       - "3306"
-    env_file:
-        - ./.env
+#    env_file:
+#        - ./.env
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
