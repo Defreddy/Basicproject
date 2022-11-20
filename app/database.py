@@ -6,9 +6,9 @@ from pathlib import Path
 import os
 
 os.system('ls -al')
-os.system('cat env/.env')
+os.system('cat .env')
 
-dotenv_path = Path('./env/.env')
+dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
 username = os.getenv('DOCKER_USER')
