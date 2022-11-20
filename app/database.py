@@ -5,6 +5,9 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
+os.system('ls -al')
+os.system('cat env/.env')
+
 dotenv_path = Path('./env/.env')
 load_dotenv(dotenv_path=dotenv_path)
 
