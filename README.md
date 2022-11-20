@@ -65,16 +65,16 @@
 - [x] Additional inspiration... (PHPMyAdmin, .env file inside API container including GitHub secrets, CORS and additional GET requests, DB automation deployment with init.sql and .csv input file).
 
 
-## How To Use
+## Chosen Theme
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+The theme has been chosen based upon CVEs and vulnerabilities. A CVE are [Common Vulnerabilities and Exposures](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures). The list has been provided by CISA, documenting [known and actively exploited vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog).
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+# Clone this repository or simply open via GitHub Desktop!
+$ git clone https://github.com/Defreddy/Basicproject.git
 
 # Go into the repository
-$ cd electron-markdownify
+$ cd Basicproject
 
 # Install dependencies
 $ npm install

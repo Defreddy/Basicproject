@@ -28,8 +28,6 @@ jobs:
           echo HOST="$HOST" >> ./env/.env
           echo PORT="$PORT" >> ./env/.env
           echo DATABASE="$DATABASE" >> ./env/.env
-          ls -a
-          cat env/.env
         shell: bash
 
       - name: Docker Build
