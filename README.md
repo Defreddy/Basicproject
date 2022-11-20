@@ -84,7 +84,6 @@ $ docker compose up
 # A variety of links can be accessed including the following:
 $ localhost:8051  | This is your API website / Alpine / Slim.
 $ localhost:8082  | This is your PHPMyAdmin - which will provide a much easier way of working with the MySQL DB. 
-                  | Simply use the basic credentials: root & abc123 provided in the docker-compose.yml.
 $ index.html      | You can simply open up the index.html locally to get a localhost view on your API calls!
                   | You can access this file in the Website folder.
 ```
@@ -98,7 +97,7 @@ You can view a live version of the provided API:
 * [Here you can view the live website on sinners webhosting - POST DOES WORK here](https://frederikcrauwels.sinners.be/)
 
 You can view a live version of the provided API itself (server):
-* [Okteto API deployment](https://api-service-defreddy.cloud.okteto.net/docs)
+* [Okteto API deployment DOCS](https://api-service-defreddy.cloud.okteto.net/docs)
 
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/FastAPI-DOCS.png)
 
@@ -113,6 +112,10 @@ You can view a live version of the provided PHPMyAdmin (server):
 
 ## Postman Requests
 
+Take a closer look at the DOCS provided: [Okteto API DOCS](https://api-service-defreddy.cloud.okteto.net/docs)
+
+* [CVE ID](https://phpmyadmin-defreddy.cloud.okteto.net/cve/1)
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/FastAPI-DOCS.png)
 
 
 ## API Calls distilled
