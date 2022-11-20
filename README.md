@@ -116,8 +116,26 @@ Take a closer look at the DOCS provided: [Okteto API DOCS](https://api-service-d
 
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/FastAPI-DOCS.png)
 
-* [CVE ID](https://api-service-defreddy.cloud.okteto.net/cve/1)
-    - This API can call a parameter thanks to a personal ID.
+* [GET - cveID](https://api-service-defreddy.cloud.okteto.net/cve/1)
+    - This API can call a parameter thanks to a personal ID. Adjust the last path parameter {cveID}.
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/GET1.png)
+
+* [GET - cveName](https://api-service-defreddy.cloud.okteto.net/cveName/CVE-2020-5735)
+    - This API can call a parameter thanks to a personal cve NAME (CVE-YEAR-ID). Adjust the last path parameter {cveName}.
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/GET2.png)
+
+* [GET - ?query=<PRODUCT NAME>](https://api-service-defreddy.cloud.okteto.net/product/?query=FTA)
+    - This API can call a parameter thanks to a product name. Adjust the last query parameter to ?query={Product}.
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/GET3.png)
+
+* [GET - allcve](https://api-service-defreddy.cloud.okteto.net/cve/1)
+    - This API can call every single CVE in the DB.
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/GET4.png)
+
+* [POST - createcve](https://api-service-defreddy.cloud.okteto.net/createcve/)
+    - This API can POST a new CVE with additional details. Adjust parameters through a BODY JSON (Beautify) input.
+![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/POST1.png)
+
 
 
 
