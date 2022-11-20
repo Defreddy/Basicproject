@@ -81,7 +81,8 @@ $ docker compose up
 ```
 
 > **Note**
-> Certain URLS need to be adjusted accordingly. There is a website available with <localhost> parameters.
+> Certain URLs / parameters in this project need to be adjusted accordingly. There is a website available with <localhost> parameters.
+> You must adjust the CORS table (allow_origins=['*'] = easiest way) and the GitHub secrets will not work for basicproject.yml. You could still define your own .env file!
 
 
 ## Download
