@@ -76,15 +76,12 @@ $ git clone https://github.com/Defreddy/Basicproject.git
 # Go into the repository
 $ cd Basicproject
 
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
+# Make sure to launch Docker Desktop and simply run
+$ docker compose up
 ```
 
 > **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> Certain URLS need to be adjusted accordingly. There is a website available with <localhost> parameters.
 
 
 ## Download
