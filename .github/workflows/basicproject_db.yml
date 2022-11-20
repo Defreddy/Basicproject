@@ -6,11 +6,9 @@ jobs:
   delivery:
     runs-on: ubuntu-latest
     name: Deliver container
-    with:
-    secrets: |
-       "MYSQL_DATABASE= ${{ secrets.DATABASE }}"
-        "MYSQL_ROOT_PASSWORD= ${{ secrets.PASSWORD }}"
-        run: docker build -t ${{ secrets.DOCKER_USER }}/basicproject_db:latest ./database
+    env:
+    MYSQL_DATABASE= ${{ secrets.DATABASE }}
+    MYSQL_ROOT_PASSWORD= ${{ secrets.PASSWORD }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v1
@@ -19,6 +17,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
+        run: docker build --build-arg MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD -t ${{ secrets.DOCKER_USER }}/basicproject_db:latest ./database
 
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/basicproject_db:latest
