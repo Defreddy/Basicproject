@@ -2,6 +2,11 @@ FROM mysql:latest
 
 COPY envsql/.env .env
 
+ENV MYSQL_ROOT_PASSWORD=$MYSQL_DATABASE
+ENV MYSQL_DATABASE=$MYSQL_ROOT_PASSWORD
+
+RUN print(MYSQL_ROOT_PASSWORD)
+
 RUN chown -R mysql:root .env
 RUN chown -R mysql:root /etc/mysql/
 RUN chown -R mysql:root /var/lib/mysql/
