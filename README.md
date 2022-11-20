@@ -84,6 +84,7 @@ $ localhost:8051  | This is your API website / Alpine / Slim.
 $ localhost:8082  | This is your PHPMyAdmin - which will provide a much easier way of working with the MySQL DB. 
                   | Simply use the basic credentials: root & abc123 provided in the docker-compose.yml.
 $ index.html      | You can simply open up the index.html locally to get a localhost view on your API calls!
+                  | You can access this file in the Website folder.
 ```
 
 > **Note**
