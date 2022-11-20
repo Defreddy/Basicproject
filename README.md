@@ -41,24 +41,24 @@
 - [x] Postman requests of API + screenshots README.md.
 - [x] OpenAPI Docs screenhots README.md.
 
-# REST API
+### REST API
 
 - [x] At least 2 GET Endpoints (4 provided).
 - [x] At least 1 POST endpoint (1 provided).
 - [x] Validations.
 - [x] Usage of path parameters, query parameters and body.
 
-# DEPLOYING
+### DEPLOYING
 
 - [x] API Docker container automation via GitHub Actions (2x provided for DB and API image).
 - [x] API Docker container deployment via Okteto Cloud and Docker Compose.
 
-# FRONT-END
+### FRONT-END
 
 - [x] Simple front-end, based on AlpineJS -> This has been changed to python:3.11.0-slim.
 - [x] Deployment of front-end.
 
-# ADDITIONAL FACTORS
+### ADDITIONAL FACTORS
 
 - [x] Front-end styling (CCS - BootStrap Theme).
 - [x] API interaction with Database (MySQL).
