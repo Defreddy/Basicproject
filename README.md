@@ -124,7 +124,7 @@ Take a closer look at the DOCS provided: [Okteto API DOCS](https://api-service-d
     - This API can call a parameter thanks to a personal cve NAME (CVE-YEAR-ID). Adjust the last path parameter {cveName}.
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/GET2.png)
 
-* [GET - ?query=<PRODUCT NAME>](https://api-service-defreddy.cloud.okteto.net/product/?query=FTA)
+* [GET - ?query=PRODUCT NAME](https://api-service-defreddy.cloud.okteto.net/product/?query=FTA)
     - This API can call a parameter thanks to a product name. Adjust the last query parameter to ?query={Product}.
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/GET3.png)
 
@@ -146,5 +146,7 @@ As the assignment is primarily focussed around API calls - additional points cou
 - [x] PHPMyAdmin in order to be able to fully utilize the DB from your browser / deployment. No need for additional software / installs. 
 - [x] .env file inside API container including GitHub secrets - this part of the integration will make sure certain parameters are hidden from others.
 - [x] Additioan GET requests (required 2, created 4).
+- [x] CORS has been adjusted to be able to acces both GitHub pages and custom-hosted solution.
+
 
 
