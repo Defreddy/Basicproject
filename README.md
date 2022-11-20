@@ -11,7 +11,12 @@
 <h4 align="center">An API and IaC integration with FastAPI<a href="http://electron.atom.io" target="_blank"></a>.</h4>
 
 <p align="center">
-  <a href="https://hub.docker.com/repository/docker/freds00n/basicproject">
+    API Deployment:
+  <a href="https://hub.docker.com/repository/docker/freds00n/basicproject" target="_blank">
+    <img src="https://img.shields.io/docker/automated/freds00n/basicproject?style=for-the-badge"
+         alt="API">
+  </a>
+    <a href="https://hub.docker.com/repository/docker/freds00n/basicproject" target="_blank">
     <img src="https://img.shields.io/docker/automated/freds00n/basicproject?style=for-the-badge"
          alt="API">
   </a>
