@@ -24,9 +24,9 @@
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#chosen-theme">Chosen Theme</a> •
-  <a href="#usage-and-link(s)">Usage and link(s)</a> •
+  <a href="#usage-and-links">Usage and link(s)</a> •
   <a href="#postman-requests">Postman Requests</a> •
-  <a href="#additional-requests">Additional requests</a> •
+  <a href="#additional-requests">Additional requests</a>
 </p>
 
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/website.png)
@@ -68,7 +68,7 @@
 
 The theme has been chosen based upon CVEs and vulnerabilities. A CVE are [Common Vulnerabilities and Exposures](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures). The list has been provided by CISA, documenting [known and actively exploited vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog).
 
-## Usage and link(s)
+## Usage and links
 
 ```bash
 # Clone this repository or simply open via GitHub Desktop!
