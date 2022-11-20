@@ -11,15 +11,15 @@ os.system('cat .env')
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
-username = os.getenv('DOCKER_USER')
-password = os.getenv('DOCKER_PASSWORD')
+username = os.getenv('USERNAME')
+password = os.getenv('PASSWORD')
 
 print(username)
 print(password)
 
-host = os.getenv('host')
-port = os.getenv('port')
-database = os.getenv('database')
+host = os.getenv('HOST')
+port = os.getenv('PORT')
+database = os.getenv('DATABASE')
   
 # PYTHON FUNCTION TO CONNECT TO THE MYSQL DATABASE AND
 # RETURN THE SQLACHEMY ENGINE OBJECT
