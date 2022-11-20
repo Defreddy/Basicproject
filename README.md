@@ -114,8 +114,13 @@ You can view a live version of the provided PHPMyAdmin (server):
 
 Take a closer look at the DOCS provided: [Okteto API DOCS](https://api-service-defreddy.cloud.okteto.net/docs)
 
-* [CVE ID](https://phpmyadmin-defreddy.cloud.okteto.net/cve/1)
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/FastAPI-DOCS.png)
+
+* [CVE ID](https://phpmyadmin-defreddy.cloud.okteto.net/cve/1)
+- This API can call a parameter thanks to an ID.
+
+
+
 
 
 ## API Calls distilled
