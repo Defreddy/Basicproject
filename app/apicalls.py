@@ -13,7 +13,8 @@ origins = [
     "https://api-service-defreddy.cloud.okteto.net/*",
     "https://phpmyadmin-defreddy.cloud.okteto.net/*",
     "https://api-service-defreddy.cloud.okteto.net/createcve/",
-    "https://defreddy.github.io"
+    "https://defreddy.github.io",
+    "https://frederikcrauwels.sinners.be/"
 ]
 
 app.add_middleware(
