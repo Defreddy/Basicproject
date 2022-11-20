@@ -11,7 +11,8 @@ app = FastAPI()
 
 origins = [
     "https://api-service-defreddy.cloud.okteto.net/*",
-    "https://phpmyadmin-defreddy.cloud.okteto.net/*"
+    "https://phpmyadmin-defreddy.cloud.okteto.net/*",
+    "https://defreddy.github.io"
 ]
 
 app.add_middleware(
