@@ -6,8 +6,8 @@ services:
     image: freds00n/basicproject_db:latest
     container_name: mysql-basicproject
     environment:
-      - MYSQL_DATABASE=${database}
-      - MYSQL_ROOT_PASSWORD=${password}
+      - MYSQL_DATABASE=$MYSQL_DATABASE
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
     ports:
       - "3306:3306"
     restart: always
@@ -15,8 +15,8 @@ services:
       - "3306"
 #    volumes:
 #      - ./env/.env:/env/.env
-#    env_file:
-#        - .env
+    env_file:
+        - .env
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest

@@ -13,14 +13,21 @@ jobs:
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: create .env file
+        env:
+          MYSQL_DATABASE: ${{ secrets.DATABASE }}
+          MYSQL_ROOT_PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          mkdir env
+          touch env/.envsql
+          echo MYSQL_DATABASE="$MYSQL_DATABASE" >> ./env/.envsql
+          echo MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD" >> ./env/.envsql
+          ls -a
+          cat env/.envsql
+        shell: bash
+
       - name: Docker Build
         run: docker build -t ${{ secrets.DOCKER_USER }}/basicproject_db:latest ./database
-        env:
-          user: 'root'
-          password: 'abc123'
-          host: 'db'
-          port: 3306
-          database: 'cve'
-  
+
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/basicproject_db:latest
