@@ -133,12 +133,18 @@ Take a closer look at the DOCS provided: [Okteto API DOCS](https://api-service-d
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/GET4.png)
 
 * [POST - createcve](https://api-service-defreddy.cloud.okteto.net/createcve/)
-    - This API can POST a new CVE with additional details. Adjust parameters through a BODY JSON (Beautify) input.
+    - This API can POST a new CVE with additional details. Adjust parameters through a BODY JSON (Beautify) input. The ID will adjust automatically.
 ![screenshot](https://github.com/Defreddy/Basicproject_frederikcrauwels/blob/main/Pictures_Readme/POST1.png)
 
 
+## Additional requests
+
+As the assignment is primarily focussed around API calls - additional points could be rewarded if additional factors were taken into consideration.
+
+- [x] Front-end styling (CCS - BootStrap Theme) - personally customized according to the specifications of this assignment.
+- [x] API interaction with Database (MySQL). DB IaC automation deployment with init.sql and .csv input file. The entire DB is build based on this assignment, including init.sql automation for a complete automatic experience based on a .CSV input file. Only adjust the CSV -> deploy automatically in every other way (do not adjust the name of the CSV file). This also includes CRUD, DATABASE, MODEL and SCHEMA.py files.
+- [x] PHPMyAdmin in order to be able to fully utilize the DB from your browser / deployment. No need for additional software / installs. 
+- [x] .env file inside API container including GitHub secrets - this part of the integration will make sure certain parameters are hidden from others.
+- [x] Additioan GET requests (required 2, created 4).
 
 
-
-
-## API Calls distilled
