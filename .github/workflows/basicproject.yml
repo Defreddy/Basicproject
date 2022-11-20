@@ -18,7 +18,7 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
           HOST: ${{ secrets.HOST }}
-          PORT: 3306
+          PORT: ${{ secrets.PORT }}
           DATABASE: ${{ secrets.DATABASE }}
         run: |
           mkdir env
