@@ -20,4 +20,4 @@ EXPOSE 3306:3306
 
 RUN pwd
 RUN ls -a
-RUN cat .env
+RUN cat ./.env
