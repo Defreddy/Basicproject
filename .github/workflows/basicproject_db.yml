@@ -28,6 +28,9 @@ jobs:
         shell: bash
 
       - name: Docker Build
+        env:
+          MYSQL_DATABASE: ${{ secrets.DATABASE }}
+          MYSQL_ROOT_PASSWORD: ${{ secrets.PASSWORD }}
         run: docker build -t ${{ secrets.DOCKER_USER }}/basicproject_db:latest ./database
 
       - name: Upload container to Docker Hub with Push
