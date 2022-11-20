@@ -34,7 +34,7 @@
 
 ## Key Features
 
-# General requirements
+### General requirements
 - [x] 1 API in GitHub Repostiory: 
 - [x] 1 Front-end in GitHub repository:
 - [x] Description of the chosen theme, API, Front-end and link(s) + README.md customization.
