@@ -8,6 +8,9 @@ services:
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    command:
+      sh -c pwd
+      sh -c ls -al
     ports:
       - "3306:3306"
     restart: always
