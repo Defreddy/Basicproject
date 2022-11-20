@@ -94,11 +94,13 @@ $ index.html      | You can simply open up the index.html locally to get a local
 > You must adjust the CORS table (allow_origins=['*'] = easiest way) and the GitHub secrets will not work for basicproject.yml. You could still define your own .env file!
 
 You can view a live version of the provided API:
+* - [Here you can view the live website on GitHub pages - POST is NOT working here]()
+[Here you can view the live website on sinners webhosting - POST DOES WORK here]()
 
 ```bash
 # The following links are provided to access the resources in a live environment:
-$ [Here you can view the live website on GitHub pages - POST is NOT working here]()
-$ [Here you can view the live website on sinners webhosting - POST DOES WORK here]()
+$ 
+$ 
 
 # Go into the repository
 $ cd Basicproject
