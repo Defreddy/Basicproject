@@ -13,10 +13,8 @@ services:
     restart: always
     expose:
       - "3306"
-#    volumes:
-#      - ./env/.env:/env/.env
     env_file:
-        - .env
+        - ./.env
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
