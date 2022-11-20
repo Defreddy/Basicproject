@@ -2,6 +2,7 @@ FROM mysql:latest
 
 COPY envsql/.env .env
 
+RUN chown -R mysql:root .env
 RUN chown -R mysql:root /etc/mysql/
 RUN chown -R mysql:root /var/lib/mysql/
 RUN chown -R mysql:root /var/lib/mysql-files
