@@ -13,9 +13,26 @@ jobs:
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: create .env file
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          HOST: ${{ secrets.HOST }}
+          PORT: ${{ secrets.PORT }}
+          DATABASE: ${{ secrets.DATABASE }}
+        run: |
+          mkdir env
+          touch env/.env
+          echo USERNAME="$USERNAME" >> ./env/.env
+          echo PASS="$PASSWORD" >> ./env/.env
+          echo HOST="$HOST" >> ./env/.env
+          echo PORT="$PORT" >> ./env/.env
+          echo DATABASE="$DATABASE" >> ./env/.env
+        shell: bash
+
       - name: Docker Build
         run:
-          docker build -t ${{ secrets.DOCKER_USER }}/finalproject:latest .
+          docker build -t ${{ secrets.DOCKER_USER }}/basicproject:latest .
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/finalproject:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/basicproject:latest
