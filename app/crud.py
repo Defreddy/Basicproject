@@ -1,30 +1,37 @@
 from sqlalchemy.orm import Session
-from app.model import Cve
-from . import model, schema
+
+import models
+import schemas
 
 
-def get_cveid(db: Session, cveID: int):
-    return db.query(model.Cve).filter(model.Cve.cveID == cveID).first()
+def get_user(db: Session, user_id: int):
+    return db.query(models.User).filter(models.User.id == user_id).first()
 
-def get_cve(db: Session, cveName: str):
-    return db.query(model.Cve).filter(model.Cve.cveName == cveName).first()
 
-def get_cveProduct(db: Session, product: str):
-    return db.query(model.Cve).filter(model.Cve.product == product).first()
+def get_user_by_email(db: Session, email: str):
+    return db.query(models.User).filter(models.User.email == email).first()
 
-def get_cveProducts(db: Session, query: str):
-    products = db.query(Cve).filter(Cve.product.contains(query)).all()
-    listProducts = []
-    for prod in products:
-        listProducts.append(prod)
-    return listProducts
 
-def get_all(db: Session, skip: int = 0):
-    return db.query(model.Cve).offset(skip).all()
+def get_users(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.User).offset(skip).limit(limit).all()
 
-def create_cve(db: Session, cve: schema.CveCreate):
-    db_cve = model.Cve(cveName=cve.cveName, product=cve.product,vendorProject=cve.vendorProject,dateAdded=cve.dateAdded)
-    db.add(db_cve)
+
+def create_user(db: Session, user: schemas.UserCreate):
+    fake_hashed_password = user.password + "notreallyhashed"
+    db_user = models.User(email=user.email, hashed_password=fake_hashed_password)
+    db.add(db_user)
     db.commit()
-    db.refresh(db_cve)
-    return db_cve
+    db.refresh(db_user)
+    return db_user
+
+
+def get_items(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.Item).offset(skip).limit(limit).all()
+
+
+def create_user_item(db: Session, item: schemas.ItemCreate, user_id: int):
+    db_item = models.Item(**item.dict(), owner_id=user_id)
+    db.add(db_item)
+    db.commit()
+    db.refresh(db_item)
+    return db_item
